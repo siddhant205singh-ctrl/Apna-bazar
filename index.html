@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apna Bazar - Your Local Online Kirana Store</title>
+  <!-- Google Fonts for Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons for clean UI elements -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Link to CSS stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-content">
+      <span class="pulse-icon">🚚</span>
+      <span>Free Home Delivery for orders above <strong>₹299</strong>!</span>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <!-- Logo and Brand -->
+      <a href="#" class="brand-logo" id="logo-link">
+        <div class="logo-icon">
+          <i data-lucide="shopping-bag"></i>
+        </div>
+        <div class="logo-text">
+          <h1>Apna Bazar</h1>
+          <span class="sub-logo">Apki Apni Dukaan</span>
+        </div>
+      </a>
+
+      <!-- Desktop Search Bar -->
+      <div class="search-container desktop-search">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="text" id="search-input-desktop" placeholder="Search fresh vegetables, dairy, snacks, flour...">
+        <button class="clear-search-btn" id="clear-search-desktop" style="display:none;">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="header-actions">
+        <a href="https://wa.me/919214556654" target="_blank" class="whatsapp-quick-chat" title="Chat on WhatsApp">
+          <i data-lucide="message-square" class="wa-icon"></i>
+          <span class="action-label">Quick Chat</span>
+        </a>
+        <button class="cart-trigger-btn" id="cart-toggle-btn" aria-label="Open Cart">
+          <div class="cart-icon-wrapper">
+            <i data-lucide="shopping-cart"></i>
+            <span class="cart-badge" id="cart-badge-count">0</span>
+          </div>
+          <span class="cart-trigger-price" id="cart-total-preview">₹0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Search Bar (Sticky under header on mobile) -->
+    <div class="mobile-search-wrapper">
+      <div class="search-container mobile-search">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="text" id="search-input-mobile" placeholder="Search for groceries...">
+        <button class="clear-search-btn" id="clear-search-mobile" style="display:none;">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Hero Banner Section -->
+    <section class="hero-section">
+      <div class="hero-bg-accent"></div>
+      <div class="hero-container">
+        <div class="hero-text-content">
+          <span class="hero-tag">✨ Local Social Internship Initiative</span>
+          <h2 class="hero-title">Fresh Groceries <br>Delivered in <span class="highlight-text">30 Mins</span></h2>
+          <p class="hero-description">Your trusted neighborhood Kirana store, now fully digital. Experience hand-picked freshness, organic produce, and daily staples at wholesale prices.</p>
+          
+          <!-- Hero Badges -->
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <div class="badge-icon"><i data-lucide="shield-check"></i></div>
+              <span>100% Hygienic</span>
+            </div>
+            <div class="hero-badge">
+              <div class="badge-icon"><i data-lucide="zap"></i></div>
+              <span>Express Delivery</span>
+            </div>
+            <div class="hero-badge">
+              <div class="badge-icon"><i data-lucide="navigation"></i></div>
+              <span>Min Order ₹50</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-glass-card">
+            <div class="card-glow"></div>
+            <div class="hero-card-header">
+              <span class="store-status"><span class="status-dot"></span> Open Today</span>
+              <span class="store-time">8 AM - 10 PM</span>
+            </div>
+            <h3>Apna Bazar Kirana</h3>
+            <p class="store-address"><i data-lucide="map-pin"></i> Ward No. 12, Main Bazar, Near City Center, India</p>
+            <div class="divider"></div>
+            <div class="store-owner-profile">
+              <div class="owner-avatar">S</div>
+              <div>
+                <p class="owner-name">Siddharth Kumar</p>
+                <p class="owner-title">Store Owner & Manager</p>
+              </div>
+            </div>
+            <a href="#products-showcase" class="shop-now-btn">
+              Browse Catalog <i data-lucide="arrow-down"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Storefront Section (Catalog, Sidebar trigger) -->
+    <section class="catalog-section" id="products-showcase">
+      <!-- Category Quick Filter Tab Bar -->
+      <div class="category-tabs-container">
+        <h3 class="section-heading">Browse Categories</h3>
+        <div class="category-tabs-scroll" id="category-tabs">
+          <button class="category-tab active" data-category="all">
+            <span class="tab-emoji">📦</span> All Items
+          </button>
+          <button class="category-tab" data-category="fruits-veg">
+            <span class="tab-emoji">🥦</span> Veggies & Fruits
+          </button>
+          <button class="category-tab" data-category="dairy">
+            <span class="tab-emoji">🥛</span> Dairy & Bakery
+          </button>
+          <button class="category-tab" data-category="staples">
+            <span class="tab-emoji">🌾</span> Atta, Rice & Dals
+          </button>
+          <button class="category-tab" data-category="snacks">
+            <span class="tab-emoji">🍪</span> Snacks & Sweets
+          </button>
+          <button class="category-tab" data-category="beverages">
+            <span class="tab-emoji">🥤</span> Beverages
+          </button>
+          <button class="category-tab" data-category="household">
+            <span class="tab-emoji">🧼</span> Household Care
+          </button>
+        </div>
+      </div>
+
+      <!-- Catalog Header & Stats -->
+      <div class="catalog-header-bar">
+        <div class="results-info">
+          <span id="results-count">Showing all products</span>
+        </div>
+        <div class="catalog-sort">
+          <label for="sort-select">Sort By:</label>
+          <select id="sort-select">
+            <option value="default">Relevance</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Popularity</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- Javascript will inject products here -->
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>Loading Apna Bazar Catalog...</p>
+        </div>
+      </div>
+
+      <!-- No Products Found State -->
+      <div class="no-results-state" id="no-results" style="display: none;">
+        <div class="no-results-illustration">🔍</div>
+        <h4>No Items Found</h4>
+        <p>We couldn't find anything matching your search query. Try searching for milk, potatoes, butter, or snacks!</p>
+        <button class="reset-catalog-btn" id="reset-filters-btn">Clear Filters</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sliding Cart Drawer Overlay -->
+  <div class="cart-drawer-overlay" id="cart-overlay"></div>
+
+  <!-- Sliding Cart Drawer -->
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <div class="cart-title-wrapper">
+        <i data-lucide="shopping-cart"></i>
+        <h2>My Basket</h2>
+        <span class="cart-count-pill" id="cart-drawer-count">0</span>
+      </div>
+      <button class="close-cart-btn" id="close-cart-btn" aria-label="Close Cart">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <!-- Empty Cart Content -->
+    <div class="cart-empty-state" id="cart-empty" style="display: flex;">
+      <div class="empty-cart-icon">
+        <i data-lucide="shopping-bag"></i>
+      </div>
+      <h3>Your basket is empty</h3>
+      <p>Fill it with fresh veggies, milk, staples, or delicious snacks to get started!</p>
+      <button class="start-shopping-btn" id="continue-shopping-btn">Start Shopping</button>
+    </div>
+
+    <!-- Cart Filled Content -->
+    <div class="cart-filled-state" id="cart-filled" style="display: none;">
+      <!-- Scrollable Items List -->
+      <div class="cart-items-list" id="cart-items-container">
+        <!-- Javascript will inject cart items here -->
+      </div>
+
+      <!-- Cart Billing Summary -->
+      <div class="cart-summary-footer">
+        <div class="bill-details">
+          <div class="bill-row">
+            <span>Item Subtotal</span>
+            <span id="bill-subtotal">₹0</span>
+          </div>
+          <div class="bill-row savings-row">
+            <span>Discount Saved</span>
+            <span id="bill-discount">-₹0</span>
+          </div>
+          <div class="bill-row">
+            <span>Delivery Fee 
+              <span class="info-tooltip" title="Free delivery on orders above ₹299">
+                <i data-lucide="info"></i>
+              </span>
+            </span>
+            <span id="bill-delivery">₹0</span>
+          </div>
+          <div class="delivery-progress-wrapper" id="delivery-progress-container">
+            <div class="delivery-progress-bar">
+              <div class="delivery-progress-fill" id="delivery-progress-fill" style="width: 0%"></div>
+            </div>
+            <p class="delivery-progress-text" id="delivery-progress-text">Add ₹299 for Free Delivery</p>
+          </div>
+          <div class="divider"></div>
+          <div class="bill-row bill-total">
+            <span>Grand Total</span>
+            <span id="bill-total">₹0</span>
+          </div>
+        </div>
+
+        <!-- Checkout Buttons -->
+        <div class="cart-action-buttons">
+          <button class="checkout-submit-btn" id="open-checkout-modal-btn">
+            Proceed to Checkout <i data-lucide="arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Product Detail Modal Overlay -->
+  <div class="modal-overlay" id="product-detail-modal" style="display: none;">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="close-detail-modal" aria-label="Close details">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-grid">
+        <div class="modal-image-container">
+          <span class="product-badge modal-badge" id="modal-product-tag">Fresh</span>
+          <img src="" alt="" id="modal-product-image">
+        </div>
+        <div class="modal-info-container">
+          <span class="modal-category" id="modal-product-category">Category</span>
+          <h2 id="modal-product-name">Product Name</h2>
+          <span class="modal-unit" id="modal-product-unit">1 kg</span>
+          
+          <div class="modal-rating">
+            <div class="stars" id="modal-product-stars">
+              <!-- JS will inject stars -->
+            </div>
+            <span class="rating-val" id="modal-product-rating-num">4.5</span>
+          </div>
+
+          <div class="modal-price-container">
+            <span class="current-price" id="modal-product-price">₹0</span>
+            <span class="original-price" id="modal-product-original-price">₹0</span>
+            <span class="discount-badge" id="modal-product-discount-percentage">0% OFF</span>
+          </div>
+
+          <p class="modal-description" id="modal-product-description">
+            Product description details go here.
+          </p>
+
+          <div class="modal-actions-bar">
+            <div class="quantity-selector-wrapper">
+              <span class="qty-label">Qty:</span>
+              <div class="qty-selector">
+                <button class="qty-btn dec-qty" id="modal-dec-qty"><i data-lucide="minus"></i></button>
+                <span class="qty-value" id="modal-qty-val">1</span>
+                <button class="qty-btn inc-qty" id="modal-inc-qty"><i data-lucide="plus"></i></button>
+              </div>
+            </div>
+            <button class="modal-add-to-cart-btn" id="modal-add-to-cart-btn">
+              Add to Basket <i data-lucide="shopping-cart"></i>
+            </button>
+          </div>
+
+          <div class="modal-safety-notes">
+            <div class="safety-note">
+              <i data-lucide="truck"></i>
+              <span>Delivery within 30 mins</span>
+            </div>
+            <div class="safety-note">
+              <i data-lucide="refresh-cw"></i>
+              <span>No-questions replacement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Information Modal Overlay -->
+  <div class="modal-overlay" id="checkout-modal" style="display: none;">
+    <div class="modal-card checkout-modal-card">
+      <button class="modal-close-btn" id="close-checkout-modal" aria-label="Close checkout">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="checkout-modal-header">
+        <h2>Delivery & Contact Details</h2>
+        <p>Complete your order to send it directly to Apna Bazar via WhatsApp.</p>
+      </div>
+
+      <form id="checkout-form" class="checkout-form">
+        <div class="form-grid">
+          <!-- Name -->
+          <div class="form-group">
+            <label for="customer-name">Full Name <span class="required">*</span></label>
+            <div class="input-wrapper">
+              <i data-lucide="user" class="input-icon"></i>
+              <input type="text" id="customer-name" required placeholder="Enter your full name">
+            </div>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-group">
+            <label for="customer-phone">WhatsApp Number <span class="required">*</span></label>
+            <div class="input-wrapper">
+              <i data-lucide="phone" class="input-icon"></i>
+              <span class="country-prefix">+91</span>
+              <input type="tel" id="customer-phone" required pattern="[6789][0-9]{9}" title="Please enter a valid 10-digit Indian mobile number" placeholder="10-digit mobile number">
+            </div>
+          </div>
+
+          <!-- Order Type -->
+          <div class="form-group full-width">
+            <label>Order Handover Option <span class="required">*</span></label>
+            <div class="radio-card-group">
+              <label class="radio-card active">
+                <input type="radio" name="delivery-type" value="home" checked>
+                <div class="radio-card-content">
+                  <i data-lucide="home"></i>
+                  <div>
+                    <span class="radio-title">Home Delivery</span>
+                    <span class="radio-sub">Deliver to address in 30 mins</span>
+                  </div>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="delivery-type" value="pickup">
+                <div class="radio-card-content">
+                  <i data-lucide="store"></i>
+                  <div>
+                    <span class="radio-title">Self Pickup</span>
+                    <span class="radio-sub">Pick up from store in 15 mins</span>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Address (Conditional) -->
+          <div class="form-group full-width" id="address-group">
+            <label for="customer-address">Delivery Address <span class="required">*</span></label>
+            <div class="input-wrapper textarea-wrapper">
+              <i data-lucide="map-pin" class="input-icon textarea-icon"></i>
+              <textarea id="customer-address" required rows="3" placeholder="Flat/House No., Street Name, Landmark, Locality"></textarea>
+            </div>
+          </div>
+
+          <!-- Payment Method -->
+          <div class="form-group full-width">
+            <label>Payment Method <span class="required">*</span></label>
+            <div class="payment-options-group">
+              <label class="payment-option-pill active">
+                <input type="radio" name="payment-method" value="cod" checked>
+                <span>💵 Cash on Delivery</span>
+              </label>
+              <label class="payment-option-pill">
+                <input type="radio" name="payment-method" value="upi">
+                <span>📱 Pay on Delivery (UPI/GPay/PhonePe)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Special instructions -->
+          <div class="form-group full-width">
+            <label for="order-notes">Special Instructions (Optional)</label>
+            <div class="input-wrapper">
+              <i data-lucide="clipboard" class="input-icon"></i>
+              <input type="text" id="order-notes" placeholder="e.g., Leave order at gate, call before reaching">
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-summary-box">
+          <div class="summary-line">
+            <span>Total Items:</span>
+            <strong id="checkout-summary-items">0 items</strong>
+          </div>
+          <div class="summary-line font-large">
+            <span>Total Amount to Pay:</span>
+            <strong id="checkout-summary-total" class="green-text">₹0</strong>
+          </div>
+        </div>
+
+        <button type="submit" class="whatsapp-checkout-btn">
+          <span>Place Order on WhatsApp</span>
+          <div class="wa-btn-icons">
+            <i data-lucide="message-square" class="wa-icon-inline"></i>
+            <i data-lucide="arrow-right"></i>
+          </div>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Store Information & Footer -->
+  <footer class="store-footer">
+    <div class="footer-container">
+      <div class="footer-brand-column">
+        <div class="footer-logo">
+          <div class="logo-icon-small">
+            <i data-lucide="shopping-bag"></i>
+          </div>
+          <h3>Apna Bazar</h3>
+        </div>
+        <p class="footer-about">Apna Bazar is dedicated to serving local communities with top-grade groceries, fresh organic farm produce, and immediate customer assistance. Supporting local vendors, creating local smiles.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="https://wa.me/919214556654" target="_blank" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-info-column">
+        <h4>Store Timings</h4>
+        <ul class="footer-list">
+          <li><strong>Monday - Sunday:</strong> 8:00 AM - 10:00 PM</li>
+          <li><strong>Home Delivery Timings:</strong> 8:30 AM - 9:30 PM</li>
+          <li><span class="store-status open-badge"><span class="status-dot"></span> Open All Days</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-info-column">
+        <h4>Contact & Location</h4>
+        <ul class="footer-list address-list">
+          <li>
+            <i data-lucide="map-pin"></i>
+            <span>Ward No. 12, Main Bazar Road, Near City Center Clock Tower, India</span>
+          </li>
+          <li>
+            <i data-lucide="phone"></i>
+            <a href="tel:+919214556654">+91 9214556654</a> / <a href="tel:+919214556654">+91 9214556654</a>
+          </li>
+          <li>
+            <i data-lucide="mail"></i>
+            <a href="mailto:support@apnabazar.com">support@apnabazar.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sub Footer & Social Internship Credit -->
+    <div class="sub-footer">
+      <div class="sub-footer-container">
+        <p>&copy; 2026 Apna Bazar. All Rights Reserved.</p>
+        <p class="internship-credit">
+          <i data-lucide="heart" class="heart-icon"></i> 
+          Designed as a <strong>Social Internship Project</strong> to digitize local retail stores.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Main Javascript -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
