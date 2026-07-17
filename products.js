@@ -3,258 +3,334 @@ const PRODUCTS = [
   {
     id: "fv-1",
     name: "Fresh Red Tomatoes",
+    name_hi: "ताज़ा लाल टमाटर",
     category: "fruits-veg",
     price: 40,
     originalPrice: 50,
     unit: "1 kg",
+    unit_hi: "1 किलो",
     image: "https://images.unsplash.com/photo-1595855759920-86582396756a?w=500&auto=format&fit=crop&q=60",
     description: "Farm-fresh, juicy red tomatoes. Handpicked and packed under hygienic conditions. Perfect for curries, salads, and soups.",
+    description_hi: "खेत से ताज़ा, रसीले लाल टमाटर। स्वच्छ और स्वच्छ परिस्थितियों में चुने गए। करी, सलाद और सूप के लिए उपयुक्त।",
     rating: 4.5,
     inStock: true,
-    tag: "Fresh"
+    tag: "Fresh",
+    tag_hi: "ताज़ा"
   },
   {
     id: "fv-2",
     name: "Fresh Potatoes (Aloo)",
+    name_hi: "ताज़ा आलू (Aloo)",
     category: "fruits-veg",
     price: 30,
     originalPrice: 35,
     unit: "1 kg",
+    unit_hi: "1 किलो",
     image: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=500&auto=format&fit=crop&q=60",
     description: "Premium quality potatoes, rich in carbohydrates. A staple for every household. Direct from local farms.",
+    description_hi: "कार्बोहाइड्रेट से भरपूर प्रीमियम गुणवत्ता वाले आलू। हर घर के लिए एक मुख्य भोजन। स्थानीय खेतों से सीधे।",
     rating: 4.6,
     inStock: true,
-    tag: "Staple"
+    tag: "Staple",
+    tag_hi: "रोज़ाना"
   },
   {
     id: "fv-3",
     name: "Fresh Green Coriander (Dhania)",
+    name_hi: "ताज़ा हरा धनिया (Dhania)",
     category: "fruits-veg",
     price: 15,
     originalPrice: 20,
     unit: "1 Bunch",
+    unit_hi: "1 गुच्छा",
     image: "https://images.unsplash.com/photo-1588879460618-5a491ef2364c?w=500&auto=format&fit=crop&q=60",
     description: "Fresh aromatic green coriander leaves. Cleaned and ready to add refreshing flavor and garnish to your dishes.",
+    description_hi: "ताज़ा खुशबूदार हरी धनिया की पत्तियाँ। साफ और भोजन में ताज़ा स्वाद जोड़ने और सजाने के लिए तैयार।",
     rating: 4.8,
     inStock: true,
-    tag: "Organic"
+    tag: "Organic",
+    tag_hi: "ऑर्गेनिक"
   },
   {
     id: "fv-4",
     name: "Bananas (Kela)",
+    name_hi: "ताज़ा पके केले (Kela)",
     category: "fruits-veg",
     price: 50,
     originalPrice: 60,
     unit: "1 Dozen",
+    unit_hi: "1 दर्जन",
     image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500&auto=format&fit=crop&q=60",
     description: "Sweet and perfectly ripe yellow bananas. A rich source of potassium and instant energy.",
+    description_hi: "मीठे और पूरी तरह से पके पीले केले। पोटेशियम और तत्काल ऊर्जा का एक समृद्ध स्रोत।",
     rating: 4.4,
     inStock: true,
-    tag: "High Energy"
+    tag: "High Energy",
+    tag_hi: "ताज़गी"
   },
 
   // Dairy & Bakery
   {
     id: "db-1",
     name: "Amul Taaza Toned Milk",
+    name_hi: "अमूल ताज़ा टोंड दूध",
     category: "dairy",
     price: 27,
     originalPrice: 27,
     unit: "500 ml",
+    unit_hi: "500 मिली",
     image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500&auto=format&fit=crop&q=60",
     description: "Homogenized toned milk from Amul. Pasteurized and packed in sterile poly packs. Ideal for tea, coffee, and daily consumption.",
+    description_hi: "अमूल का होमोजिनाइज्ड टोंड दूध। पाश्चुरीकृत और कीटाणुरहित पैकेटों में पैक किया गया। चाय, कॉफी और दैनिक उपभोग के लिए आदर्श।",
     rating: 4.9,
     inStock: true,
-    tag: "Popular"
+    tag: "Popular",
+    tag_hi: "लोकप्रिय"
   },
   {
     id: "db-2",
     name: "Amul Salted Butter",
+    name_hi: "अमूल साल्टेड बटर (मक्खन)",
     category: "dairy",
     price: 56,
     originalPrice: 58,
     unit: "100 g",
+    unit_hi: "100 ग्राम",
     image: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=500&auto=format&fit=crop&q=60",
     description: "Classic salted butter from Amul. Utterly Butterly Delicious. Enhances the flavor of toasts, parathas, and baking items.",
+    description_hi: "अमूल का क्लासिक नमकीन मक्खन। टोस्ट, परांठे और बेकिंग के स्वाद को उत्कृष्ट बनाता है।",
     rating: 4.9,
     inStock: true,
-    tag: "Daily Essential"
+    tag: "Daily Essential",
+    tag_hi: "ज़रूरी"
   },
   {
     id: "db-3",
     name: "Fresh Paneer (Cottage Cheese)",
+    name_hi: "ताज़ा पनीर (Paneer)",
     category: "dairy",
     price: 90,
     originalPrice: 100,
     unit: "200 g",
+    unit_hi: "200 ग्राम",
     image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=500&auto=format&fit=crop&q=60",
     description: "Soft, rich, and creamy fresh cottage cheese. High in protein, perfect for making Paneer Butter Masala, Palak Paneer, and tikka.",
+    description_hi: "नरम, मलाईदार ताज़ा पनीर। प्रोटीन से भरपूर, पनीर बटर मसाला, पालक पनीर और टिक्का बनाने के लिए उपयुक्त।",
     rating: 4.7,
     inStock: true,
-    tag: "Fresh"
+    tag: "Fresh",
+    tag_hi: "ताज़ा"
   },
 
   // Atta, Rice & Dals
   {
     id: "ar-1",
     name: "Aashirvaad Shudh Chakki Atta",
+    name_hi: "आशीर्वाद शुद्ध चक्की आटा",
     category: "staples",
     price: 245,
     originalPrice: 280,
     unit: "5 kg",
+    unit_hi: "5 किलो",
     image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop&q=60",
     description: "100% pure whole wheat flour milled in traditional chakki process. Retains fiber and nutrients, giving you super-soft rotis.",
+    description_hi: "पारंपरिक चक्की प्रक्रिया में पिसा हुआ 100% शुद्ध साबुत गेहूं का आटा। फाइबर और पोषक तत्वों को बनाए रखता है, जिससे रोटियाँ बहुत नरम बनती हैं।",
     rating: 4.8,
     inStock: true,
-    tag: "Best Seller"
+    tag: "Best Seller",
+    tag_hi: "सबसे ज़्यादा बिकने वाला"
   },
   {
     id: "ar-2",
     name: "India Gate Basmati Rice (Premium)",
+    name_hi: "इण्डिया गेट बासमती चावल (प्रीमियम)",
     category: "staples",
     price: 110,
     originalPrice: 130,
     unit: "1 kg",
+    unit_hi: "1 किलो",
     image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&auto=format&fit=crop&q=60",
     description: "Aged long-grain basmati rice. Delivers thin, fluffy grains with standard rich aroma. Excellent for biryanis and special pulav.",
+    description_hi: "पुराने लंबे दाने वाले बासमती चावल। बेहतरीन समृद्ध सुगंध के साथ पतले, खिले हुए दाने देता है। बिरयानी और विशेष पुलाव के लिए उत्कृष्ट।",
     rating: 4.7,
     inStock: true,
-    tag: "Aged Grain"
+    tag: "Aged Grain",
+    tag_hi: "पुराना बासमती"
   },
   {
     id: "ar-3",
     name: "Tata Sampann Toor / Arhar Dal",
+    name_hi: "टाटा संपन्न तूर / अरहर दाल",
     category: "staples",
     price: 165,
     originalPrice: 185,
     unit: "1 kg",
+    unit_hi: "1 किलो",
     image: "https://images.unsplash.com/photo-1547058881-aa0edd92aab3?w=500&auto=format&fit=crop&q=60",
     description: "Unpolished toor dal rich in natural protein and dietary fiber. Delicious taste, cooks easily. Essential for daily Dal Tadka.",
+    description_hi: "प्राकृतिक प्रोटीन और आहार फाइबर से भरपूर बिना पॉलिश की हुई अरहर दाल। स्वादिष्ट स्वाद, आसानी से पकती है। दैनिक दाल तड़का के लिए आवश्यक।",
     rating: 4.6,
     inStock: true,
-    tag: "Unpolished"
+    tag: "Unpolished",
+    tag_hi: "बिना पॉलिश"
   },
 
   // Snacks & Sweets
   {
     id: "ss-1",
     name: "Britannia Marie Gold Biscuits",
+    name_hi: "ब्रिटानिया मैरी गोल्ड बिस्कुट",
     category: "snacks",
     price: 35,
     originalPrice: 40,
     unit: "250 g",
+    unit_hi: "250 ग्राम",
     image: "https://images.unsplash.com/photo-1558961309-dbdf71799f5a?w=500&auto=format&fit=crop&q=60",
     description: "Light and crispy tea-time biscuits packed with vitamins and minerals. The ideal partner for your daily morning and evening tea.",
+    description_hi: "विटामिन और खनिजों से भरपूर हल्का और कुरकुरा चाय-समय का बिस्कुट। आपकी दैनिक सुबह और शाम की चाय का आदर्श साथी।",
     rating: 4.5,
     inStock: true,
-    tag: "Tea Partner"
+    tag: "Tea Partner",
+    tag_hi: "चाय साथी"
   },
   {
     id: "ss-2",
     name: "Haldiram's Aloo Bhujia",
+    name_hi: "हल्दीराम आलू भुजिया",
     category: "snacks",
     price: 50,
     originalPrice: 55,
     unit: "150 g",
+    unit_hi: "150 ग्राम",
     image: "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=500&auto=format&fit=crop&q=60",
     description: "A spicy, crispy potato noodle snack seasoned with mint and spices. Traditional Indian namkeen that everyone loves.",
+    description_hi: "पुदीने और मसालों से तैयार एक तीखा, कुरकुरा आलू भुजिया नमकीन। पारंपरिक भारतीय स्वाद जिसे हर कोई पसंद करता है।",
     rating: 4.7,
     inStock: true,
-    tag: "Crispy"
+    tag: "Crispy",
+    tag_hi: "कुरकुरा"
   },
   {
     id: "ss-3",
     name: "Cadbury Dairy Milk Silk",
+    name_hi: "कैडबरी डेयरी मिल्क सिल्क",
     category: "snacks",
     price: 80,
     originalPrice: 80,
     unit: "60 g",
+    unit_hi: "60 ग्राम",
     image: "https://images.unsplash.com/photo-1548907040-4d42b52115ca?w=500&auto=format&fit=crop&q=60",
     description: "Rich, smooth, and creamy milk chocolate. Melts in the mouth to give a premium chocolate experience.",
+    description_hi: "समृद्ध, चिकनी और मलाईदार मिल्क चॉकलेट। मुंह में पिघलकर एक शानदार प्रीमियम चॉकलेट अनुभव देती है।",
     rating: 4.8,
     inStock: true,
-    tag: "Sweet Treat"
+    tag: "Sweet Treat",
+    tag_hi: "मिठाई"
   },
 
   // Beverages
   {
     id: "bv-1",
     name: "Tata Tea Gold",
+    name_hi: "टाटा टी गोल्ड (चाय पत्ती)",
     category: "beverages",
     price: 140,
     originalPrice: 155,
     unit: "250 g",
+    unit_hi: "250 ग्राम",
     image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500&auto=format&fit=crop&q=60",
     description: "A unique blend of fine Assam tea leaves with long leaves for a rich taste and irresistible aroma.",
+    description_hi: "शानदार कड़क स्वाद और सम्मोहक सुगंध के लिए बेहतरीन असम चाय की पत्तियों का एक अनूठा मिश्रण।",
     rating: 4.7,
     inStock: true,
-    tag: "Classic"
+    tag: "Classic",
+    tag_hi: "कड़क"
   },
   {
     id: "bv-2",
     name: "Nescafe Classic Coffee",
+    name_hi: "नेस्कैफे क्लासिक कॉफ़ी",
     category: "beverages",
     price: 185,
     originalPrice: 195,
     unit: "50 g",
+    unit_hi: "50 ग्राम",
     image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&auto=format&fit=crop&q=60",
     description: "100% pure instant coffee powder made from carefully selected beans. Provides a strong and refreshing coffee aroma to start your day.",
+    description_hi: "ध्यान से चुने गए बीन्स से बना 100% शुद्ध इंस्टेंट कॉफी पाउडर। आपके दिन की शुरुआत करने के लिए एक मजबूत और ताज़ा खुशबू देता है।",
     rating: 4.8,
     inStock: true,
-    tag: "Instant Brew"
+    tag: "Instant Brew",
+    tag_hi: "ताज़ा कॉफ़ी"
   },
   {
     id: "bv-3",
     name: "Coca-Cola Soft Drink",
+    name_hi: "कोका-कोला कोल्ड ड्रिंक",
     category: "beverages",
     price: 40,
     originalPrice: 40,
     unit: "750 ml",
+    unit_hi: "750 मिली",
     image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
     description: "Refreshing, bubbly, and sweet cola carbonated beverage. Best enjoyed chilled during gatherings or hot summer days.",
+    description_hi: "ताज़ा, बुलबुलेदार और मीठा कोला कोल्ड ड्रिंक। समारोहों या गर्म गर्मियों के दिनों में ठंडा पीने का सबसे अच्छा मज़ा।",
     rating: 4.3,
     inStock: true,
-    tag: "Chilled"
+    tag: "Chilled",
+    tag_hi: "ठंडा"
   },
 
   // Household Care
   {
     id: "hh-1",
     name: "Vim Dishwash Liquid Gel",
+    name_hi: "विम डिशवॉश लिक्विड जेल",
     category: "household",
     price: 99,
     originalPrice: 110,
     unit: "500 ml",
+    unit_hi: "500 मिली",
     image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&auto=format&fit=crop&q=60",
     description: "Power of 100 lemons. Cuts grease easily and cleans utensils thoroughly, leaving a pleasant lemon scent.",
+    description_hi: "100 नींबू की शक्ति। बर्तनों से चिकनाई को आसानी से हटाता है और बर्तनों को अच्छी तरह साफ करके सुखद नींबू की खुशबू छोड़ता है।",
     rating: 4.7,
     inStock: true,
-    tag: "Best Cleaning"
+    tag: "Best Cleaning",
+    tag_hi: "सुपर क्लीन"
   },
   {
     id: "hh-2",
     name: "Surf Excel Easy Wash Detergent",
+    name_hi: "सर्फ एक्सेल इजी वॉश पाउडर",
     category: "household",
     price: 135,
     originalPrice: 145,
     unit: "1 kg",
+    unit_hi: "1 किलो",
     image: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=500&auto=format&fit=crop&q=60",
     description: "Premium laundry powder engineered to dissolve completely in water and easily remove tough stains like grease, oil, mud, and ink.",
+    description_hi: "प्रीमियम वाशिंग पाउडर जिसे पानी में पूरी तरह घुलने और तेल, ग्रीस, कीचड़ और स्याही जैसे जिद्दी दागों को आसानी से हटाने के लिए बनाया गया है।",
     rating: 4.6,
     inStock: true,
-    tag: "Stain Remover"
+    tag: "Stain Remover",
+    tag_hi: "दागों की छुट्टी"
   },
   {
     id: "hh-3",
     name: "Dettol Liquid Handwash",
+    name_hi: "डेटॉल लिक्विड हैंडवॉश (रिफिल)",
     category: "household",
     price: 95,
     originalPrice: 99,
     unit: "200 ml Refill",
+    unit_hi: "200 मिली रिफिल",
     image: "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=500&auto=format&fit=crop&q=60",
     description: "Trusted 99.9% germ protection formula from Dettol. Enriched with moisturizers to keep your hands soft, clean, and germ-free.",
+    description_hi: "डेटॉल का विश्वसनीय 99.9% कीटाणु सुरक्षा फॉर्मूला। आपके हाथों को नरम, साफ और कीटाणु-मुक्त रखने के लिए मॉइस्चराइज़र से समृद्ध।",
     rating: 4.8,
     inStock: true,
-    tag: "Antiseptic"
+    tag: "Antiseptic",
+    tag_hi: "सुरक्षित हाथ"
   }
 ];

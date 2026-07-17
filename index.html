@@ -19,7 +19,7 @@
   <div class="announcement-bar">
     <div class="announcement-content">
       <span class="pulse-icon">🚚</span>
-      <span>Free Home Delivery for orders above <strong>₹299</strong>!</span>
+      <span data-translate="announcement">Free Home Delivery for orders above <strong>₹299</strong>!</span>
     </div>
   </div>
 
@@ -32,8 +32,8 @@
           <i data-lucide="shopping-bag"></i>
         </div>
         <div class="logo-text">
-          <h1>Apna Bazar</h1>
-          <span class="sub-logo">Apki Apni Dukaan</span>
+          <h1 data-translate="brand_name">Apna Bazar</h1>
+          <span class="sub-logo" data-translate="logo_subtitle">Apki Apni Dukaan</span>
         </div>
       </a>
 
@@ -48,9 +48,19 @@
 
       <!-- Quick Actions -->
       <div class="header-actions">
+        <!-- Language Switcher Toggle -->
+        <button class="lang-toggle-btn" id="lang-toggle-btn" title="Toggle Language / भाषा बदलें">
+          <i data-lucide="languages" class="lang-icon"></i>
+          <span class="lang-label-text" id="lang-toggle-text">हिन्दी</span>
+        </button>
+
+        <button class="admin-portal-trigger" id="admin-toggle-btn" title="Owner Dashboard">
+          <i data-lucide="shield-check" class="admin-btn-icon"></i>
+          <span class="action-label" data-translate="owner_panel">Owner Panel</span>
+        </button>
         <a href="https://wa.me/919214556654" target="_blank" class="whatsapp-quick-chat" title="Chat on WhatsApp">
           <i data-lucide="message-square" class="wa-icon"></i>
-          <span class="action-label">Quick Chat</span>
+          <span class="action-label" data-translate="quick_chat">Quick Chat</span>
         </a>
         <button class="cart-trigger-btn" id="cart-toggle-btn" aria-label="Open Cart">
           <div class="cart-icon-wrapper">
@@ -80,23 +90,23 @@
       <div class="hero-bg-accent"></div>
       <div class="hero-container">
         <div class="hero-text-content">
-          <span class="hero-tag">✨ Local Social Internship Initiative</span>
-          <h2 class="hero-title">Fresh Groceries <br>Delivered in <span class="highlight-text">30 Mins</span></h2>
-          <p class="hero-description">Your trusted neighborhood Kirana store, now fully digital. Experience hand-picked freshness, organic produce, and daily staples at wholesale prices.</p>
+          <span class="hero-tag" data-translate="hero_tag">✨ Local Social Internship Initiative</span>
+          <h2 class="hero-title" data-translate="hero_title">Fresh Groceries <br>Delivered in <span class="highlight-text">30 Mins</span></h2>
+          <p class="hero-description" data-translate="hero_desc">Your trusted neighborhood Kirana store, now fully digital. Experience hand-picked freshness, organic produce, and daily staples at wholesale prices.</p>
           
           <!-- Hero Badges -->
           <div class="hero-badges">
             <div class="hero-badge">
               <div class="badge-icon"><i data-lucide="shield-check"></i></div>
-              <span>100% Hygienic</span>
+              <span data-translate="badge_hygiene">100% Hygienic</span>
             </div>
             <div class="hero-badge">
               <div class="badge-icon"><i data-lucide="zap"></i></div>
-              <span>Express Delivery</span>
+              <span data-translate="badge_delivery">Express Delivery</span>
             </div>
             <div class="hero-badge">
               <div class="badge-icon"><i data-lucide="navigation"></i></div>
-              <span>Min Order ₹50</span>
+              <span data-translate="badge_min_order">Min Order ₹50</span>
             </div>
           </div>
         </div>
@@ -104,20 +114,20 @@
           <div class="hero-glass-card">
             <div class="card-glow"></div>
             <div class="hero-card-header">
-              <span class="store-status"><span class="status-dot"></span> Open Today</span>
-              <span class="store-time">8 AM - 10 PM</span>
+              <span class="store-status"><span class="status-dot"></span> <span data-translate="status_open">Open Today</span></span>
+              <span class="store-time" data-translate="status_time">8 AM - 10 PM</span>
             </div>
-            <h3>Apna Bazar Kirana</h3>
+            <h3 data-translate="store_title">Apna Bazar Kirana</h3>
             <p class="store-address"><i data-lucide="map-pin"></i> Ward No. 12, Main Bazar, Near City Center, India</p>
             <div class="divider"></div>
             <div class="store-owner-profile">
               <div class="owner-avatar">S</div>
               <div>
                 <p class="owner-name">Siddharth Kumar</p>
-                <p class="owner-title">Store Owner & Manager</p>
+                <p class="owner-title" data-translate="owner_title">Store Owner & Manager</p>
               </div>
             </div>
-            <a href="#products-showcase" class="shop-now-btn">
+            <a href="#products-showcase" class="shop-now-btn" data-translate="shop_now">
               Browse Catalog <i data-lucide="arrow-down"></i>
             </a>
           </div>
@@ -129,27 +139,27 @@
     <section class="catalog-section" id="products-showcase">
       <!-- Category Quick Filter Tab Bar -->
       <div class="category-tabs-container">
-        <h3 class="section-heading">Browse Categories</h3>
+        <h3 class="section-heading" data-translate="categories_heading">Browse Categories</h3>
         <div class="category-tabs-scroll" id="category-tabs">
-          <button class="category-tab active" data-category="all">
+          <button class="category-tab active" data-category="all" data-translate="cat_all">
             <span class="tab-emoji">📦</span> All Items
           </button>
-          <button class="category-tab" data-category="fruits-veg">
+          <button class="category-tab" data-category="fruits-veg" data-translate="cat_fruits_veg">
             <span class="tab-emoji">🥦</span> Veggies & Fruits
           </button>
-          <button class="category-tab" data-category="dairy">
+          <button class="category-tab" data-category="dairy" data-translate="cat_dairy">
             <span class="tab-emoji">🥛</span> Dairy & Bakery
           </button>
-          <button class="category-tab" data-category="staples">
+          <button class="category-tab" data-category="staples" data-translate="cat_staples">
             <span class="tab-emoji">🌾</span> Atta, Rice & Dals
           </button>
-          <button class="category-tab" data-category="snacks">
+          <button class="category-tab" data-category="snacks" data-translate="cat_snacks">
             <span class="tab-emoji">🍪</span> Snacks & Sweets
           </button>
-          <button class="category-tab" data-category="beverages">
+          <button class="category-tab" data-category="beverages" data-translate="cat_beverages">
             <span class="tab-emoji">🥤</span> Beverages
           </button>
-          <button class="category-tab" data-category="household">
+          <button class="category-tab" data-category="household" data-translate="cat_household">
             <span class="tab-emoji">🧼</span> Household Care
           </button>
         </div>
@@ -161,12 +171,12 @@
           <span id="results-count">Showing all products</span>
         </div>
         <div class="catalog-sort">
-          <label for="sort-select">Sort By:</label>
+          <label for="sort-select" data-translate="sort_by">Sort By:</label>
           <select id="sort-select">
-            <option value="default">Relevance</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="rating">Popularity</option>
+            <option value="default" data-translate="sort_default">Relevance</option>
+            <option value="price-low" data-translate="sort_low_high">Price: Low to High</option>
+            <option value="price-high" data-translate="sort_high_low">Price: High to Low</option>
+            <option value="rating" data-translate="sort_rating">Popularity</option>
           </select>
         </div>
       </div>
@@ -183,9 +193,9 @@
       <!-- No Products Found State -->
       <div class="no-results-state" id="no-results" style="display: none;">
         <div class="no-results-illustration">🔍</div>
-        <h4>No Items Found</h4>
-        <p>We couldn't find anything matching your search query. Try searching for milk, potatoes, butter, or snacks!</p>
-        <button class="reset-catalog-btn" id="reset-filters-btn">Clear Filters</button>
+        <h4 data-translate="no_results_title">No Items Found</h4>
+        <p data-translate="no_results_desc">We couldn't find anything matching your search query. Try searching for milk, potatoes, butter, or snacks!</p>
+        <button class="reset-catalog-btn" id="reset-filters-btn" data-translate="clear_filters">Clear Filters</button>
       </div>
     </section>
   </main>
@@ -198,7 +208,7 @@
     <div class="cart-header">
       <div class="cart-title-wrapper">
         <i data-lucide="shopping-cart"></i>
-        <h2>My Basket</h2>
+        <h2 data-translate="basket_title">My Basket</h2>
         <span class="cart-count-pill" id="cart-drawer-count">0</span>
       </div>
       <button class="close-cart-btn" id="close-cart-btn" aria-label="Close Cart">
@@ -211,9 +221,9 @@
       <div class="empty-cart-icon">
         <i data-lucide="shopping-bag"></i>
       </div>
-      <h3>Your basket is empty</h3>
-      <p>Fill it with fresh veggies, milk, staples, or delicious snacks to get started!</p>
-      <button class="start-shopping-btn" id="continue-shopping-btn">Start Shopping</button>
+      <h3 data-translate="basket_empty_title">Your basket is empty</h3>
+      <p data-translate="basket_empty_desc">Fill it with fresh veggies, milk, staples, or delicious snacks to get started!</p>
+      <button class="start-shopping-btn" id="continue-shopping-btn" data-translate="start_shopping">Start Shopping</button>
     </div>
 
     <!-- Cart Filled Content -->
@@ -227,15 +237,16 @@
       <div class="cart-summary-footer">
         <div class="bill-details">
           <div class="bill-row">
-            <span>Item Subtotal</span>
+            <span data-translate="bill_subtotal_label">Item Subtotal</span>
             <span id="bill-subtotal">₹0</span>
           </div>
           <div class="bill-row savings-row">
-            <span>Discount Saved</span>
+            <span data-translate="bill_discount_label">Discount Saved</span>
             <span id="bill-discount">-₹0</span>
           </div>
           <div class="bill-row">
-            <span>Delivery Fee 
+            <span>
+              <span data-translate="bill_delivery_label">Delivery Fee</span>
               <span class="info-tooltip" title="Free delivery on orders above ₹299">
                 <i data-lucide="info"></i>
               </span>
@@ -250,14 +261,14 @@
           </div>
           <div class="divider"></div>
           <div class="bill-row bill-total">
-            <span>Grand Total</span>
+            <span data-translate="bill_total_label">Grand Total</span>
             <span id="bill-total">₹0</span>
           </div>
         </div>
 
         <!-- Checkout Buttons -->
         <div class="cart-action-buttons">
-          <button class="checkout-submit-btn" id="open-checkout-modal-btn">
+          <button class="checkout-submit-btn" id="open-checkout-modal-btn" data-translate="checkout_btn">
             Proceed to Checkout <i data-lucide="arrow-right"></i>
           </button>
         </div>
@@ -300,7 +311,7 @@
 
           <div class="modal-actions-bar">
             <div class="quantity-selector-wrapper">
-              <span class="qty-label">Qty:</span>
+              <span class="qty-label" data-translate="modal_qty_label">Qty:</span>
               <div class="qty-selector">
                 <button class="qty-btn dec-qty" id="modal-dec-qty"><i data-lucide="minus"></i></button>
                 <span class="qty-value" id="modal-qty-val">1</span>
@@ -315,11 +326,11 @@
           <div class="modal-safety-notes">
             <div class="safety-note">
               <i data-lucide="truck"></i>
-              <span>Delivery within 30 mins</span>
+              <span data-translate="safety_delivery">Delivery within 30 mins</span>
             </div>
             <div class="safety-note">
               <i data-lucide="refresh-cw"></i>
-              <span>No-questions replacement</span>
+              <span data-translate="safety_replacement">No-questions replacement</span>
             </div>
           </div>
         </div>
@@ -334,15 +345,15 @@
         <i data-lucide="x"></i>
       </button>
       <div class="checkout-modal-header">
-        <h2>Delivery & Contact Details</h2>
-        <p>Complete your order to send it directly to Apna Bazar via WhatsApp.</p>
+        <h2 data-translate="checkout_title">Delivery & Contact Details</h2>
+        <p data-translate="checkout_desc">Complete your order to send it directly to Apna Bazar via WhatsApp.</p>
       </div>
 
       <form id="checkout-form" class="checkout-form">
         <div class="form-grid">
           <!-- Name -->
           <div class="form-group">
-            <label for="customer-name">Full Name <span class="required">*</span></label>
+            <label for="customer-name" data-translate="field_name">Full Name <span class="required">*</span></label>
             <div class="input-wrapper">
               <i data-lucide="user" class="input-icon"></i>
               <input type="text" id="customer-name" required placeholder="Enter your full name">
@@ -351,7 +362,7 @@
 
           <!-- Phone Number -->
           <div class="form-group">
-            <label for="customer-phone">WhatsApp Number <span class="required">*</span></label>
+            <label for="customer-phone" data-translate="field_phone">WhatsApp Number <span class="required">*</span></label>
             <div class="input-wrapper">
               <i data-lucide="phone" class="input-icon"></i>
               <span class="country-prefix">+91</span>
@@ -361,15 +372,15 @@
 
           <!-- Order Type -->
           <div class="form-group full-width">
-            <label>Order Handover Option <span class="required">*</span></label>
+            <label data-translate="field_handover">Order Handover Option <span class="required">*</span></label>
             <div class="radio-card-group">
               <label class="radio-card active">
                 <input type="radio" name="delivery-type" value="home" checked>
                 <div class="radio-card-content">
                   <i data-lucide="home"></i>
                   <div>
-                    <span class="radio-title">Home Delivery</span>
-                    <span class="radio-sub">Deliver to address in 30 mins</span>
+                    <span class="radio-title" data-translate="handover_delivery">Home Delivery</span>
+                    <span class="radio-sub" data-translate="handover_delivery_sub">Deliver to address in 30 mins</span>
                   </div>
                 </div>
               </label>
@@ -378,8 +389,8 @@
                 <div class="radio-card-content">
                   <i data-lucide="store"></i>
                   <div>
-                    <span class="radio-title">Self Pickup</span>
-                    <span class="radio-sub">Pick up from store in 15 mins</span>
+                    <span class="radio-title" data-translate="handover_pickup">Self Pickup</span>
+                    <span class="radio-sub" data-translate="handover_pickup_sub">Pick up from store in 15 mins</span>
                   </div>
                 </div>
               </label>
@@ -388,7 +399,7 @@
 
           <!-- Address (Conditional) -->
           <div class="form-group full-width" id="address-group">
-            <label for="customer-address">Delivery Address <span class="required">*</span></label>
+            <label for="customer-address" data-translate="field_address">Delivery Address <span class="required">*</span></label>
             <div class="input-wrapper textarea-wrapper">
               <i data-lucide="map-pin" class="input-icon textarea-icon"></i>
               <textarea id="customer-address" required rows="3" placeholder="Flat/House No., Street Name, Landmark, Locality"></textarea>
@@ -397,22 +408,22 @@
 
           <!-- Payment Method -->
           <div class="form-group full-width">
-            <label>Payment Method <span class="required">*</span></label>
+            <label data-translate="field_payment">Payment Method <span class="required">*</span></label>
             <div class="payment-options-group">
               <label class="payment-option-pill active">
                 <input type="radio" name="payment-method" value="cod" checked>
-                <span>💵 Cash on Delivery</span>
+                <span data-translate="pay_cod">💵 Cash on Delivery</span>
               </label>
               <label class="payment-option-pill">
                 <input type="radio" name="payment-method" value="upi">
-                <span>📱 Pay on Delivery (UPI/GPay/PhonePe)</span>
+                <span data-translate="pay_upi">📱 Pay on Delivery (UPI/GPay/PhonePe)</span>
               </label>
             </div>
           </div>
 
           <!-- Special instructions -->
           <div class="form-group full-width">
-            <label for="order-notes">Special Instructions (Optional)</label>
+            <label for="order-notes" data-translate="field_instructions">Special Instructions (Optional)</label>
             <div class="input-wrapper">
               <i data-lucide="clipboard" class="input-icon"></i>
               <input type="text" id="order-notes" placeholder="e.g., Leave order at gate, call before reaching">
@@ -422,23 +433,112 @@
 
         <div class="checkout-summary-box">
           <div class="summary-line">
-            <span>Total Items:</span>
+            <span data-translate="checkout_total_items">Total Items:</span>
             <strong id="checkout-summary-items">0 items</strong>
           </div>
           <div class="summary-line font-large">
-            <span>Total Amount to Pay:</span>
+            <span data-translate="checkout_payable">Total Amount to Pay:</span>
             <strong id="checkout-summary-total" class="green-text">₹0</strong>
           </div>
         </div>
 
         <button type="submit" class="whatsapp-checkout-btn">
-          <span>Place Order on WhatsApp</span>
+          <span data-translate="place_order_btn">Place Order on WhatsApp</span>
           <div class="wa-btn-icons">
             <i data-lucide="message-square" class="wa-icon-inline"></i>
             <i data-lucide="arrow-right"></i>
           </div>
         </button>
       </form>
+    </div>
+  </div>
+
+  <!-- Owner Inventory Dashboard Modal Overlay -->
+  <div class="modal-overlay" id="admin-dashboard-modal" style="display: none;">
+    <div class="modal-card admin-modal-card">
+      <button class="modal-close-btn" id="close-admin-modal" aria-label="Close dashboard">
+        <i data-lucide="x"></i>
+      </button>
+      
+      <div class="admin-modal-header">
+        <div class="header-title-row">
+          <i data-lucide="shield-check" class="admin-header-icon"></i>
+          <h2>Store Owner Dashboard</h2>
+        </div>
+        <p>Manage product pricing, discounts, and current stock status. Changes will reflect instantly on the shop website.</p>
+      </div>
+
+      <!-- Quick Search & Actions for Admin -->
+      <div class="admin-controls-row">
+        <div class="search-container admin-search">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" id="admin-search-input" placeholder="Search product to manage...">
+        </div>
+        <div class="admin-bulk-actions">
+          <button class="admin-btn admin-btn-reset" id="admin-reset-btn" title="Reset all prices and stock to original values">
+            <i data-lucide="refresh-cw"></i> Restore Defaults
+          </button>
+        </div>
+      </div>
+
+      <!-- Inventory Table -->
+      <div class="admin-table-container">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Product Info</th>
+              <th>Category</th>
+              <th>Price (₹)</th>
+              <th>Orig. Price (₹)</th>
+              <th>Stock Status</th>
+            </tr>
+          </thead>
+          <tbody id="admin-product-rows">
+            <!-- Dynamic product rows injected here -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Admin Actions -->
+      <div class="admin-footer-bar">
+        <span class="admin-info-text">Unsaved changes will be lost if you close.</span>
+        <div class="admin-actions">
+          <button class="admin-btn admin-btn-cancel" id="cancel-admin-changes-btn">Cancel</button>
+          <button class="admin-btn admin-btn-save" id="save-admin-changes-btn">
+            Save Changes <i data-lucide="save"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Owner Authentication Password Modal -->
+  <div class="modal-overlay" id="admin-auth-modal" style="display: none;">
+    <div class="modal-card admin-auth-card">
+      <button class="modal-close-btn" id="close-auth-modal" aria-label="Close login">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="auth-modal-content">
+        <div class="auth-icon-wrapper">
+          <i data-lucide="lock" class="auth-lock-icon"></i>
+        </div>
+        <h2 data-translate="auth_title">Store Owner Login</h2>
+        <p data-translate="auth_desc">Please enter your 6-digit security PIN to access the inventory dashboard.</p>
+        
+        <form id="admin-auth-form" class="auth-form">
+          <div class="form-group">
+            <div class="input-wrapper">
+              <i data-lucide="key-round" class="input-icon"></i>
+              <input type="password" id="admin-password-input" required maxlength="6" placeholder="Enter Owner PIN " autofocus>
+            </div>
+            <span class="auth-error-message" id="auth-error-msg"></span>
+          </div>
+          
+          <button type="submit" class="auth-submit-btn" data-translate="auth_submit">
+            Verify & Enter <i data-lucide="arrow-right"></i>
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 
@@ -450,9 +550,9 @@
           <div class="logo-icon-small">
             <i data-lucide="shopping-bag"></i>
           </div>
-          <h3>Apna Bazar</h3>
+          <h3 data-translate="brand_name">Apna Bazar</h3>
         </div>
-        <p class="footer-about">Apna Bazar is dedicated to serving local communities with top-grade groceries, fresh organic farm produce, and immediate customer assistance. Supporting local vendors, creating local smiles.</p>
+        <p class="footer-about" data-translate="footer_desc">Apna Bazar is dedicated to serving local communities with top-grade groceries, fresh organic farm produce, and immediate customer assistance. Supporting local vendors, creating local smiles.</p>
         <div class="social-links">
           <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
           <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
@@ -461,20 +561,24 @@
       </div>
 
       <div class="footer-info-column">
-        <h4>Store Timings</h4>
+        <h4 data-translate="footer_timings_title">Store Timings</h4>
         <ul class="footer-list">
-          <li><strong>Monday - Sunday:</strong> 8:00 AM - 10:00 PM</li>
-          <li><strong>Home Delivery Timings:</strong> 8:30 AM - 9:30 PM</li>
-          <li><span class="store-status open-badge"><span class="status-dot"></span> Open All Days</span></li>
+          <li><strong data-translate="timings_days">Monday - Sunday:</strong> <span data-translate="timings_hours">8:00 AM - 10:00 PM</span></li>
+          <li><strong data-translate="delivery_timings_title">Home Delivery Timings:</strong> <span data-translate="delivery_timings_hours">8:30 AM - 9:30 PM</span></li>
+          <li><span class="store-status open-badge"><span class="status-dot"></span> <span data-translate="status_open_all_days">Open All Days</span></span></li>
+          <li style="margin-top: 8px; border-top: 1px solid #1e293b; padding-top: 10px;">
+            <i data-lucide="lock" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px; color: var(--primary);"></i>
+            <button class="footer-admin-link" id="admin-footer-btn" style="color: #94a3b8; font-size: 0.85rem; font-weight: 600; text-decoration: underline; background: none; border: none; padding: 0; cursor: pointer; transition: var(--transition-fast);" data-translate="footer_portal_link">Store Manager Portal</button>
+          </li>
         </ul>
       </div>
 
       <div class="footer-info-column">
-        <h4>Contact & Location</h4>
+        <h4 data-translate="footer_contact_title">Contact & Location</h4>
         <ul class="footer-list address-list">
           <li>
             <i data-lucide="map-pin"></i>
-            <span>Ward No. 12, Main Bazar Road, Near City Center Clock Tower, India</span>
+            <span data-translate="footer_address">Ward No. 12, Main Bazar Road, Near City Center Clock Tower, India</span>
           </li>
           <li>
             <i data-lucide="phone"></i>
@@ -491,10 +595,10 @@
     <!-- Sub Footer & Social Internship Credit -->
     <div class="sub-footer">
       <div class="sub-footer-container">
-        <p>&copy; 2026 Apna Bazar. All Rights Reserved.</p>
+        <p data-translate="footer_copyright">&copy; 2026 Apna Bazar. All Rights Reserved.</p>
         <p class="internship-credit">
           <i data-lucide="heart" class="heart-icon"></i> 
-          Designed as a <strong>Social Internship Project</strong> to digitize local retail stores.
+          <span data-translate="internship_credit_text">Designed as a <strong>Social Internship Project</strong> to digitize local retail stores.</span>
         </p>
       </div>
     </div>
