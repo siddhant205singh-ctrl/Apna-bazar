@@ -122,6 +122,23 @@ const PRODUCTS = [
     tag: "Fresh",
     tag_hi: "ताज़ा"
   },
+  {
+    id: "db-4",
+    name: "Amul Cheese",
+    name_hi: "अमूल चीज़",
+    category: "dairy",
+    price: 300,
+    originalPrice: 300,
+    unit: "500 gm",
+    unit_hi: "500 ग्राम",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5WgWHqYpLvzXXmivk4DN0unI2KplqPxDOVwHcyNWGmQ&s=10",
+    description: "Amul Pure Milk Cheese Block for daily consumption.",
+    description_hi: "रोज़ाना इस्तेमाल के लिए अमूल प्योर मिल्क चीज़ ब्लॉक।",
+    rating: 4.9,
+    inStock: true,
+    tag: "Popular",
+    tag_hi: "लोकप्रिय"
+  },
 
   // Atta, Rice & Dals
   {

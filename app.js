@@ -335,7 +335,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedInventory = localStorage.getItem("apnabazar_dynamic_inventory");
     if (savedInventory) {
       try {
-        inventory = JSON.parse(savedInventory);
+        const saved = JSON.parse(savedInventory);
+        // Automatically merge any new products added to products.js
+        let updated = false;
+        PRODUCTS.forEach(p => {
+          const exists = saved.some(item => item.id === p.id);
+          if (!exists) {
+            saved.push(JSON.parse(JSON.stringify(p))); // add deep copy
+            updated = true;
+          }
+        });
+        inventory = saved;
+        if (updated) saveInventory();
       } catch (e) {
         inventory = JSON.parse(JSON.stringify(PRODUCTS)); // fallback deep copy
       }
