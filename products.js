@@ -209,6 +209,23 @@ const PRODUCTS = [
     tag: "Unpolished",
     tag_hi: "बिना पॉलिश"
   },
+  {
+    id: "ar-4",
+    name: "Sattu Flour",
+    name_hi: "सत्तू का आटा",
+    category: "staples",
+    price: 88,
+    originalPrice: 110,
+    unit: "450 g",
+    unit_hi: "450 ग्राम",
+    image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/0bcb4dca-8719-4e05-9a69-1293a2cf8f1a/Let-s-Try-Sattu-No-Preservatives-Absolutely-Pure-Healthy.jpeg",
+    description: "Making Health Drinks, and Preparing Snacks.",
+    description_hi: "फाइबर से भरपूर, आयरन से भरपूर, प्रोटीन से भरपूर, बिना किसी प्रिजर्वेटिव के, पानी, मसालों या आटे की तैयारियों के लिए उपयुक्त।",
+    rating: 4.3,
+    inStock: true,
+    tag: "Preservative-free",
+    tag_hi: "परिरक्षक रहित"
+  },
 
   // Snacks & Sweets
   {
@@ -332,7 +349,23 @@ const PRODUCTS = [
     tag: "Chilled",
     tag_hi: "ठंडा"
   },
-
+{
+    id: "bv-4",
+    name: "Mountain Dew Soft Drink",
+    name_hi: "माउंटेन ड्यू  कोल्ड ड्रिंक",
+    category: "beverages",
+    price: 33,
+    originalPrice: 35,
+    unit: "250 ml",
+    unit_hi: "250 मिली",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfWpfxl9pVctK8OJrHURX6oGjKCWs8ge4-6NP17-0QoA&s=10",
+    description: "Edgy citrus taste, Caffeinated energy boost. Best enjoyed chilled during gatherings or hot summer days.",
+    description_hi: "ज़बरदस्त सिट्रस स्वाद और कैफ़ीन से मिलने वाली एनर्जी। इसे दोस्तों-परिवार के साथ या गर्मी के दिनों में ठंडा करके पीने का मज़ा ही कुछ और है।",
+    rating: 4.6,
+    inStock: true,
+    tag: "Chilled",
+    tag_hi: "ठंडा"
+  },
   // Household Care
   {
     id: "hh-1",
@@ -411,7 +444,7 @@ const PRODUCTS = [
     originalPrice: 305,
     unit: "500 g ",
     unit_hi: "500 ग्राम",
-    image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT73AVTMPGyu_nYcf0sAFZ2QN3Ot597NVtyBiolShu-bwmlOhtjhkedurWr0C2cctsbuekK355UcwPb4PU4KZ6--iexdaeFFZX4zOa3hkfyWYy-FbqvP0Ji_w",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3BH5HlwFZmuwfSaIn4bUm-es4bTEAI1WPdxspttORxQ&s=10",
     description: "Calcium-boost Tooth Paste for 2X Stronger Teeth, Protects Enamel, Whitens Teeth, Fresh Breath & Prevents Cavities (Combo Multipack)",
     description_hi: "कैल्शियम युक्त टूथपेस्ट जो दांतों को दोगुना मजबूत बनाता है, इनेमल की रक्षा करता है, दांतों को सफेद करता है, सांसों को ताज़ा रखता है और कैविटी से बचाता है (कॉम्बो मल्टीपैक)",
     rating: 4.4,
