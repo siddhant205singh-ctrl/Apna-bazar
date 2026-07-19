@@ -139,7 +139,24 @@ const PRODUCTS = [
     tag: "Popular",
     tag_hi: "लोकप्रिय"
   },
-
+  {
+    id: "db-5",
+    name: "Britannia 100% Whole Wheat Bread",
+    name_hi: "ब्रिटानिया प्योर होल व्हीट ब्रेड ",
+    category: "dairy",
+    price: 50,
+    originalPrice: 50,
+    unit: "450 gm",
+    unit_hi: "450 ग्राम",
+    image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRZx8Tk95TukzPwArnd-bF6dslHQOaHUndTua-DaB03MG406c1vB-x_eUFOr8QpWGkkp2S0PC_hoTpmKTH4e-enXiCcKWNhj1B-LQXQXTBGPdLGbRjpYuH5Jw",
+    description: "Made from whole wheat flour, rich in dietary fiber, no maida added, perfect for health-conscious individuals.",
+    description_hi: "साबुत गेहूं के आटे से बना, आहार फाइबर से भरपूर, मैदा रहित, स्वास्थ्य के प्रति जागरूक लोगों के लिए एकदम सही।",
+    rating: 4.8,
+    inStock: true,
+    tag: "No Maida",
+    tag_hi: "मैदा रहित"
+  },
+ 
   // Atta, Rice & Dals
   {
     id: "ar-1",
@@ -241,6 +258,23 @@ const PRODUCTS = [
     description: "Rich, smooth, and creamy milk chocolate. Melts in the mouth to give a premium chocolate experience.",
     description_hi: "समृद्ध, चिकनी और मलाईदार मिल्क चॉकलेट। मुंह में पिघलकर एक शानदार प्रीमियम चॉकलेट अनुभव देती है।",
     rating: 4.8,
+    inStock: true,
+    tag: "Sweet Treat",
+    tag_hi: "मिठाई"
+  },
+  {
+    id: "ss-4",
+    name: "Britannia Gobbles Choco Cake ",
+    name_hi: "ब्रिटानिया गोबल्स चोको केक",
+    category: "snacks",
+    price: 22,
+    originalPrice: 22,
+    unit: "120 g",
+    unit_hi: "120 ग्राम",
+    image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ7iMa7XlF9htD0pXhnCIriO6fBIU-yhSssAr_OPJAaSOj6zyuVbtl5bEx6A-f_Makflo2tNxI9WCyVVYg2gZKdopmlP00oBLiVif-2ZcoyOy5tCANTWdNf8w8",
+    description: "Soft, fluffy texture, rich chocolate flavor, goodness of milk, eggs, baked to perfection.",
+    description_hi: "नरम, मुलायम बनावट, भरपूर चॉकलेट का स्वाद, दूध और अंडे की अच्छाई, एकदम सही तरीके से पकाया गया।",
+    rating: 4.4,
     inStock: true,
     tag: "Sweet Treat",
     tag_hi: "मिठाई"
@@ -350,5 +384,40 @@ const PRODUCTS = [
     inStock: true,
     tag: "Antiseptic",
     tag_hi: "सुरक्षित हाथ"
-  }
+  },
+  {
+    id: "hh-4",
+    name: "Bajaj Almond Hair Oil",
+    name_hi: "बजाज आल्मंड हेयर ऑयल",
+    category: "household",
+    price: 136,
+    originalPrice: 142,
+    unit: "190 ml ",
+    unit_hi: "190 मिली ",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIDnEfureDydAbjN4Jitljid1Qm4z9CqmSKIgvB9616w&s=10",
+    description: "Applied for Hair Growth, Anti-hair Fall, Healthy Scalp.",
+    description_hi: "इनके लिए इस्तेमाल किया जाता है बालों का बढ़ना, बालों का झड़ना रोकना, स्कैल्प को स्वस्थ रखना",
+    rating: 5.0,
+    inStock: true,
+    tag: "Non-Sticky",
+    tag_hi: "चिपचिपा न होने वाला प्रोडक्ट"
+  },
+{
+    id: "hh-5",
+    name: "Colgate Tooth Paste",
+    name_hi: "कोलगेट स्ट्रॉन्ग टीथ,",
+    category: "household",
+    price: 250,
+    originalPrice: 305,
+    unit: "500 g ",
+    unit_hi: "500 ग्राम",
+    image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT73AVTMPGyu_nYcf0sAFZ2QN3Ot597NVtyBiolShu-bwmlOhtjhkedurWr0C2cctsbuekK355UcwPb4PU4KZ6--iexdaeFFZX4zOa3hkfyWYy-FbqvP0Ji_w",
+    description: "Calcium-boost Tooth Paste for 2X Stronger Teeth, Protects Enamel, Whitens Teeth, Fresh Breath & Prevents Cavities (Combo Multipack)",
+    description_hi: "कैल्शियम युक्त टूथपेस्ट जो दांतों को दोगुना मजबूत बनाता है, इनेमल की रक्षा करता है, दांतों को सफेद करता है, सांसों को ताज़ा रखता है और कैविटी से बचाता है (कॉम्बो मल्टीपैक)",
+    rating: 4.4,
+    inStock: true,
+    tag: "Non-Sticky",
+    tag_hi: "चिपचिपा न होने वाला प्रोडक्ट"
+  },
+
 ];
