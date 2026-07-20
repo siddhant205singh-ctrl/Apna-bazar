@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       badge_min_order: 'Min Order ₹50',
       status_open: 'Open Today',
       status_time: '8 AM - 10 PM',
-      store_title: 'Apna Bazar Kirana',
+      store_title: 'Apna Bazar',
       owner_title: 'Store Owner & Manager',
       shop_now: 'Browse Catalog',
       categories_heading: 'Browse Categories',
