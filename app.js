@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // --- CONFIGURATION ---
-  const STORE_PHONE = "919214556654"; // Pre-filled store owner number (with country code, no +)
+  const STORE_PHONE = "919125782767"; // Pre-filled store owner number (with country code, no +)
   const ADMIN_PIN = "123456";           // Default PIN to access owner inventory dashboard
 
   // --- TRANSLATIONS DICTIONARY ---
