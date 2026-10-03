@@ -4,7 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import Toast from '../../components/Toast';
 
 const OwnerLoginPage = () => {
-  const [phone, setPhone] = useState('');
+  const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -13,7 +13,12 @@ const OwnerLoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await login({ phone, password });
+      const isEmail = identifier.includes('@');
+      const payload = { password };
+      if (isEmail) payload.email = identifier;
+      else payload.phone = identifier;
+
+      const res = await login(payload);
       if (res.user.role === 'owner') {
         navigate('/owner/dashboard');
       } else {
@@ -33,9 +38,9 @@ const OwnerLoginPage = () => {
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <input 
             type="text" 
-            placeholder="Phone Number" 
-            value={phone}
-            onChange={e => setPhone(e.target.value)}
+            placeholder="Phone Number or Email" 
+            value={identifier}
+            onChange={e => setIdentifier(e.target.value)}
             required
             style={{ padding: '12px', borderRadius: '8px', border: '1px solid var(--border-color)' }}
           />
