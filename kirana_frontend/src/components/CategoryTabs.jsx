@@ -16,8 +16,17 @@ const CategoryTabs = ({ selected, onSelect }) => {
       {CATEGORIES.map(cat => (
         <button
           key={cat}
-          className={`btn ${selected === cat ? 'btn-primary' : 'btn-outline'}`}
-          style={{ whiteSpace: 'nowrap', borderRadius: '20px' }}
+          className={`btn ${selected === cat ? 'btn-primary' : ''}`}
+          style={{ 
+            whiteSpace: 'nowrap', 
+            borderRadius: '24px', 
+            padding: '8px 20px',
+            background: selected === cat ? 'var(--primary)' : 'var(--card-bg)',
+            color: selected === cat ? '#fff' : 'var(--text-main)',
+            border: `1px solid ${selected === cat ? 'var(--primary)' : 'var(--border-color)'}`,
+            boxShadow: 'var(--shadow-sm)',
+            transition: 'all 0.3s ease'
+          }}
           onClick={() => onSelect(cat)}
         >
           {cat}

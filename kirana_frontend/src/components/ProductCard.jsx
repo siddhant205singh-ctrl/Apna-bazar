@@ -29,14 +29,14 @@ const ProductCard = ({ product, onClick }) => {
         
         {qty === 0 ? (
           <button 
-            className="btn btn-primary" 
+            className="add-btn" 
             onClick={(e) => {
               e.stopPropagation();
               addToCart(product);
             }}
             disabled={!product.inStock}
           >
-            {product.inStock ? 'Add' : 'Out of Stock'}
+            {product.inStock ? 'ADD' : 'OUT OF STOCK'}
           </button>
         ) : (
           <div className="qty-controls" onClick={e => e.stopPropagation()}>

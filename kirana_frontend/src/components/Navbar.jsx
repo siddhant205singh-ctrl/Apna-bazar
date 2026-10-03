@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, ShoppingCart, User, Globe, ShoppingBag } from 'lucide-react';
+import { Search, ShoppingCart, User, Globe, ShoppingBag, Moon, Sun } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 
 const Navbar = ({ onOpenAuth }) => {
   const { totalItems, total, openCart } = useCart();
   const { user, logout } = useAuth();
+  const [theme, setTheme] = useState(localStorage.getItem('apnabazar_theme') || 'light');
   
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
   const toggleLang = () => {
     const curr = localStorage.getItem('apnabazar_lang') || 'en';
     localStorage.setItem('apnabazar_lang', curr === 'en' ? 'hi' : 'en');
     window.location.reload();
+  };
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+    localStorage.setItem('apnabazar_theme', nextTheme);
   };
 
   return (
@@ -25,6 +36,10 @@ const Navbar = ({ onOpenAuth }) => {
         </div>
 
         <div className="nav-actions">
+          <button className="btn btn-outline" onClick={toggleTheme} title="Toggle Theme">
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
+          
           <button className="btn btn-outline" onClick={toggleLang}>
             <Globe size={18} /> EN/HI
           </button>
