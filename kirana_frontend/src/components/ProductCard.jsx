@@ -8,12 +8,14 @@ const ProductCard = ({ product, onClick }) => {
   const cartItem = items.find(item => item.product._id === product._id);
   const qty = cartItem ? cartItem.qty : 0;
 
+  const lang = localStorage.getItem('apnabazar_lang') || 'en';
+
   return (
     <div className="product-card" onClick={() => onClick && onClick(product)}>
       <img src={product.image || 'https://via.placeholder.com/150'} alt={product.name} className="product-image" />
       <div className="product-category">{product.category}</div>
-      <h3 className="product-title">{product.name}</h3>
-      <div className="product-unit">{product.unit}</div>
+      <h3 className="product-title">{lang === 'hi' && product.name_hi ? product.name_hi : product.name}</h3>
+      <div className="product-unit">{lang === 'hi' && product.unit_hi ? product.unit_hi : product.unit}</div>
       
       <div className="product-price-row">
         <div>

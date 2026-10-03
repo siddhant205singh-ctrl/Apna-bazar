@@ -6,6 +6,7 @@ const ProductDetailModal = ({ product, onClose }) => {
   const { items, addToCart, updateQty } = useCart();
   const cartItem = items.find(item => item.product._id === product._id);
   const qty = cartItem ? cartItem.qty : 0;
+  const lang = localStorage.getItem('apnabazar_lang') || 'en';
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -24,8 +25,8 @@ const ProductDetailModal = ({ product, onClose }) => {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
             <div>
               <div style={{ color: 'var(--text-muted)', fontSize: '14px', marginBottom: '4px' }}>{product.category}</div>
-              <h2 style={{ fontSize: '24px', fontWeight: 'bold' }}>{product.name}</h2>
-              <div style={{ color: 'var(--text-muted)', marginTop: '4px' }}>{product.unit}</div>
+              <h2 style={{ fontSize: '24px', fontWeight: 'bold' }}>{lang === 'hi' && product.name_hi ? product.name_hi : product.name}</h2>
+              <div style={{ color: 'var(--text-muted)', marginTop: '4px' }}>{lang === 'hi' && product.unit_hi ? product.unit_hi : product.unit}</div>
             </div>
             {product.rating && (
               <div style={{ display: 'flex', alignItems: 'center', background: '#fef08a', padding: '4px 8px', borderRadius: '4px', gap: '4px', fontSize: '14px', fontWeight: '600' }}>
@@ -44,7 +45,7 @@ const ProductDetailModal = ({ product, onClose }) => {
           </div>
 
           <p style={{ color: '#334155', lineHeight: '1.5', marginBottom: '24px' }}>
-            {product.description || 'Premium quality product, locally sourced and carefully packed for freshness.'}
+            {lang === 'hi' && product.description_hi ? product.description_hi : (product.description || 'Premium quality product, locally sourced and carefully packed for freshness.')}
           </p>
 
           <div style={{ display: 'flex', gap: '16px' }}>

@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Home, Package, Users, ShoppingBag } from 'lucide-react';
 import api from '../../api/api';
+import { useAuth } from '../../context/AuthContext';
 
 const CustomersPage = () => {
   const [customers, setCustomers] = useState([]);
+  const { logout } = useAuth();
   
   useEffect(() => {
     fetchCustomers();
@@ -12,8 +14,8 @@ const CustomersPage = () => {
 
   const fetchCustomers = async () => {
     try {
-      const res = await api.get('/stats/customers');
-      setCustomers(res.data);
+      const res = await api.get('/dashboard/customers');
+      setCustomers(res.data.data || []);
     } catch (err) {
       console.error(err);
     }
@@ -29,6 +31,10 @@ const CustomersPage = () => {
           <Link to="/owner/products" className="sidebar-link"><Package size={20} /> Products</Link>
           <Link to="/owner/customers" className="sidebar-link active"><Users size={20} /> Customers</Link>
         </nav>
+        <div className="sidebar-nav" style={{ marginTop: 'auto', padding: '16px' }}>
+          <Link to="/" className="sidebar-link" style={{ marginBottom: '8px' }}>View Store</Link>
+          <button onClick={logout} className="sidebar-link" style={{ width: '100%', textAlign: 'left' }}>Logout</button>
+        </div>
       </aside>
 
       <main className="owner-main">

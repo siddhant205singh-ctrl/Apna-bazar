@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Search, ShoppingCart, User, Globe } from 'lucide-react';
+import { Search, ShoppingCart, User, Globe, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 
@@ -31,6 +31,12 @@ const Navbar = ({ onOpenAuth }) => {
           
           <Link to="/owner" className="btn btn-outline">Store Owner?</Link>
           
+          {user && user.role !== 'owner' && (
+            <Link to="/orders" className="btn btn-primary" style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+              <ShoppingBag size={18} /> My Orders
+            </Link>
+          )}
+
           {user ? (
             <div className="dropdown relative">
               <button className="btn" onClick={logout}>

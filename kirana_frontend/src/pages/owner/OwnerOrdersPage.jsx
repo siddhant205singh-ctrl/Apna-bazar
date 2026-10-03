@@ -5,11 +5,13 @@ import api from '../../api/api';
 import StatusBadge from '../../components/StatusBadge';
 import Toast from '../../components/Toast';
 import { useSocket } from '../../hooks/useSocket';
+import { useAuth } from '../../context/AuthContext';
 
 const OwnerOrdersPage = () => {
   const [orders, setOrders] = useState([]);
   const [filter, setFilter] = useState('all');
   const [toast, setToast] = useState(null);
+  const { logout } = useAuth();
   
   useSocket('new_order', (order) => {
     setOrders(prev => [order, ...prev]);
@@ -51,6 +53,10 @@ const OwnerOrdersPage = () => {
           <Link to="/owner/products" className="sidebar-link"><Package size={20} /> Products</Link>
           <Link to="/owner/customers" className="sidebar-link"><Users size={20} /> Customers</Link>
         </nav>
+        <div className="sidebar-nav" style={{ marginTop: 'auto', padding: '16px' }}>
+          <Link to="/" className="sidebar-link" style={{ marginBottom: '8px' }}>View Store</Link>
+          <button onClick={logout} className="sidebar-link" style={{ width: '100%', textAlign: 'left' }}>Logout</button>
+        </div>
       </aside>
 
       <main className="owner-main">
