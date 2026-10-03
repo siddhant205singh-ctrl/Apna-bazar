@@ -1,5 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  /* Light Theme Variables */
   --primary: #16a34a;
   --primary-dark: #15803d;
   --primary-light: #dcfce7;
