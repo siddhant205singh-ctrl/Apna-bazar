@@ -72,7 +72,7 @@ app.use('/api/dashboard', require('./src/routes/dashboard'));
 // Error handler middleware
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 5001;
 
 server.listen(PORT, () => {
   console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
