@@ -4,8 +4,21 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [items, setItems] = useState(() => {
-    const saved = localStorage.getItem('apnabazar_cart');
-    return saved ? JSON.parse(saved) : [];
+    try {
+      const saved = localStorage.getItem('apnabazar_cart');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        // Validate schema: must be an array where items have product._id
+        if (Array.isArray(parsed) && parsed.every(item => item && item.product && item.product._id)) {
+          return parsed;
+        }
+      }
+    } catch (e) {
+      console.error("Failed to parse cart from local storage", e);
+    }
+    // Wipe old invalid storage
+    localStorage.removeItem('apnabazar_cart');
+    return [];
   });
   const [isOpen, setIsOpen] = useState(false);
 
