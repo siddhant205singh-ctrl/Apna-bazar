@@ -1,76 +1,107 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, ShoppingCart, User, Globe, ShoppingBag, Moon, Sun } from 'lucide-react';
+import { Search, ShoppingCart, User, Globe, ShoppingBag, Moon, Sun, MapPin } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 
-const Navbar = ({ onOpenAuth }) => {
+const Navbar = ({ onOpenAuth, onSearch }) => {
   const { totalItems, total, openCart } = useCart();
   const { user, logout } = useAuth();
   const [theme, setTheme] = useState(localStorage.getItem('apnabazar_theme') || 'light');
-  
+  const [searchVal, setSearchVal] = useState('');
+  const lang = localStorage.getItem('apnabazar_lang') || 'en';
+
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
+  const toggleTheme = () => {
+    const next = theme === 'light' ? 'dark' : 'light';
+    setTheme(next);
+    localStorage.setItem('apnabazar_theme', next);
+  };
+
   const toggleLang = () => {
-    const curr = localStorage.getItem('apnabazar_lang') || 'en';
-    localStorage.setItem('apnabazar_lang', curr === 'en' ? 'hi' : 'en');
+    localStorage.setItem('apnabazar_lang', lang === 'en' ? 'hi' : 'en');
     window.location.reload();
   };
 
-  const toggleTheme = () => {
-    const nextTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(nextTheme);
-    localStorage.setItem('apnabazar_theme', nextTheme);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (onSearch) onSearch(searchVal);
   };
 
   return (
     <nav className="navbar">
       <div className="container nav-content">
-        <Link to="/" className="logo">Apna Bazar</Link>
-        
-        <div className="search-bar hide-mobile">
-          <Search size={20} color="#64748b" />
-          <input type="text" placeholder="Search for groceries..." />
+        {/* Logo */}
+        <Link to="/" className="logo">
+          Apna<span>Bazar</span>
+        </Link>
+
+        {/* Location Selector */}
+        <div className="nav-location hide-mobile">
+          <MapPin size={14} color="var(--primary)" />
+          <span>Deliver to</span>
+          <strong>110001 ▾</strong>
         </div>
 
+        {/* Search Bar */}
+        <form className="search-bar" onSubmit={handleSearch} style={{ flex: 1, maxWidth: '480px' }}>
+          <Search size={18} color="var(--text-muted)" />
+          <input
+            type="text"
+            placeholder={lang === 'hi' ? 'सब्ज़ी, दाल, दूध खोजें...' : 'Search for veggies, dal, milk...'}
+            value={searchVal}
+            onChange={e => { setSearchVal(e.target.value); if (onSearch) onSearch(e.target.value); }}
+          />
+        </form>
+
+        {/* Actions */}
         <div className="nav-actions">
-          <button className="btn btn-outline" onClick={toggleTheme} title="Toggle Theme">
-            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          {/* Dark Mode Toggle */}
+          <button className="btn btn-ghost" onClick={toggleTheme} title="Toggle theme">
+            {theme === 'light' ? <Moon size={19} /> : <Sun size={19} />}
           </button>
-          
-          <button className="btn btn-outline" onClick={toggleLang}>
-            <Globe size={18} /> EN/HI
+
+          {/* Language Toggle */}
+          <button className="btn btn-outline" onClick={toggleLang} style={{ fontSize: '13px', padding: '7px 12px' }}>
+            <Globe size={15} /> {lang === 'en' ? 'हिं' : 'EN'}
           </button>
-          
-          <Link to="/owner" className="btn btn-outline">Store Owner?</Link>
-          
+
+          {/* Owner Panel */}
+          <Link to="/owner" className="btn btn-outline hide-mobile" style={{ fontSize: '13px', padding: '7px 12px' }}>
+            Owner Panel
+          </Link>
+
+          {/* My Orders (logged in customers) */}
           {user && user.role !== 'owner' && (
-            <Link to="/orders" className="btn btn-primary" style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-              <ShoppingBag size={18} /> My Orders
+            <Link to="/orders" className="btn btn-outline hide-mobile" style={{ fontSize: '13px', padding: '7px 12px' }}>
+              <ShoppingBag size={15} /> Orders
             </Link>
           )}
 
+          {/* Login / Logout */}
           {user ? (
-            <div className="dropdown relative">
-              <button className="btn" onClick={logout}>
-                <User size={20} /> Logout ({user.name})
-              </button>
-            </div>
+            <button className="btn btn-ghost" onClick={logout} style={{ fontSize: '13px' }}>
+              <User size={17} /> {user.name.split(' ')[0]}
+            </button>
           ) : (
-            <button className="btn" onClick={onOpenAuth}>
-              <User size={20} /> Login
+            <button className="btn btn-outline" onClick={onOpenAuth} style={{ fontSize: '13px', padding: '7px 14px' }}>
+              <User size={15} /> Sign In
             </button>
           )}
 
+          {/* Cart */}
           <button className="cart-btn" onClick={openCart}>
-            <ShoppingCart size={20} />
-            {totalItems > 0 && (
+            <ShoppingCart size={19} />
+            {totalItems > 0 ? (
               <>
                 <span className="cart-badge">{totalItems}</span>
-                <span>₹{total.toFixed(2)}</span>
+                <span className="hide-mobile" style={{ fontSize: '14px' }}>₹{total.toFixed(0)}</span>
               </>
+            ) : (
+              <span className="hide-mobile" style={{ fontSize: '14px' }}>Cart</span>
             )}
           </button>
         </div>

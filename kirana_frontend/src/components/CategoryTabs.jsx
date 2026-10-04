@@ -1,35 +1,26 @@
 import React from 'react';
 
 const CATEGORIES = [
-  'All',
-  'Fruits & Veg',
-  'Dairy & Bakery',
-  'Atta/Rice/Dals',
-  'Snacks',
-  'Beverages',
-  'Household'
+  { id: 'All',        emoji: '🏠', label: 'All' },
+  { id: 'Fruits & Veg', emoji: '🥦', label: 'Fruits & Veg' },
+  { id: 'Dairy & Bakery', emoji: '🥛', label: 'Dairy' },
+  { id: 'Atta/Rice/Dals', emoji: '🌾', label: 'Staples' },
+  { id: 'Snacks',     emoji: '🍿', label: 'Snacks' },
+  { id: 'Beverages',  emoji: '🥤', label: 'Drinks' },
+  { id: 'Household',  emoji: '🧹', label: 'Household' },
 ];
 
 const CategoryTabs = ({ selected, onSelect }) => {
   return (
-    <div style={{ display: 'flex', gap: '12px', overflowX: 'auto', padding: '16px 0', scrollbarWidth: 'none' }}>
+    <div className="category-scroll">
       {CATEGORIES.map(cat => (
         <button
-          key={cat}
-          className={`btn ${selected === cat ? 'btn-primary' : ''}`}
-          style={{ 
-            whiteSpace: 'nowrap', 
-            borderRadius: '24px', 
-            padding: '8px 20px',
-            background: selected === cat ? 'var(--primary)' : 'var(--card-bg)',
-            color: selected === cat ? '#fff' : 'var(--text-main)',
-            border: `1px solid ${selected === cat ? 'var(--primary)' : 'var(--border-color)'}`,
-            boxShadow: 'var(--shadow-sm)',
-            transition: 'all 0.3s ease'
-          }}
-          onClick={() => onSelect(cat)}
+          key={cat.id}
+          className={`category-pill ${selected === cat.id ? 'active' : ''}`}
+          onClick={() => onSelect(cat.id)}
         >
-          {cat}
+          <span className="pill-emoji">{cat.emoji}</span>
+          <span className="pill-label">{cat.label}</span>
         </button>
       ))}
     </div>
