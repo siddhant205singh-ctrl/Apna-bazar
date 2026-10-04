@@ -31,7 +31,7 @@ function App() {
             } />
 
             {/* Owner Routes */}
-            <Route path="/owner" element={<Navigate to="/owner/login" />} />
+            <Route path="/owner" element={<Navigate to="/owner/login" replace />} />
             <Route path="/owner/login" element={<OwnerLoginPage />} />
             
             <Route path="/owner/dashboard" element={

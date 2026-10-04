@@ -6,6 +6,7 @@ import { useSocket } from '../../hooks/useSocket';
 import api from '../../api/api';
 import Toast from '../../components/Toast';
 import StatusBadge from '../../components/StatusBadge';
+import OwnerSidebar from '../../components/OwnerSidebar';
 
 const DashboardPage = () => {
   const { logout } = useAuth();
@@ -45,19 +46,7 @@ const DashboardPage = () => {
 
   return (
     <div className="owner-layout">
-      <aside className="owner-sidebar">
-        <div className="sidebar-logo">Apna Bazar <span style={{fontSize:'14px', color:'var(--text-muted)'}}>Owner</span></div>
-        <nav className="sidebar-nav" style={{ flexGrow: 1 }}>
-          <Link to="/owner/dashboard" className="sidebar-link active"><Home size={20} /> Dashboard</Link>
-          <Link to="/owner/orders" className="sidebar-link"><ShoppingBag size={20} /> Orders</Link>
-          <Link to="/owner/products" className="sidebar-link"><Package size={20} /> Products</Link>
-          <Link to="/owner/customers" className="sidebar-link"><Users size={20} /> Customers</Link>
-        </nav>
-        <div className="sidebar-nav">
-          <Link to="/" className="sidebar-link"><ExternalLink size={20} /> View Store</Link>
-          <button onClick={logout} className="sidebar-link" style={{ width: '100%', textAlign: 'left' }}><LogOut size={20} /> Logout</button>
-        </div>
-      </aside>
+      <OwnerSidebar />
 
       <main className="owner-main">
         <h1 style={{ marginBottom: '24px' }}>Dashboard Overview</h1>

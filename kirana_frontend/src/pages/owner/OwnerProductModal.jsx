@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, Save, Trash2, Image as ImageIcon } from 'lucide-react';
 import api from '../../api/api';
 
 const CATEGORIES = [
@@ -81,83 +81,144 @@ const OwnerProductModal = ({ product, onClose, onSave, showToast }) => {
 
   return (
     <div className="modal-overlay">
-      <div className="modal-content" style={{ maxWidth: '600px', width: '90%', maxHeight: '90vh', overflowY: 'auto' }}>
-        <button onClick={onClose} style={{ position: 'absolute', top: '16px', right: '16px' }}><X size={24} /></button>
+      <div 
+        className="modal-content" 
+        style={{ 
+          maxWidth: '750px', 
+          width: '95%', 
+          maxHeight: '90vh', 
+          display: 'flex', 
+          flexDirection: 'column',
+          padding: 0 // Remove default padding to handle header/body/footer structure
+        }}
+      >
+        {/* Header */}
+        <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--card-bg)' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: '900', margin: 0 }}>
+            {isEdit ? '✏️ Edit Product' : '📦 Add New Product'}
+          </h2>
+          <button onClick={onClose} className="btn btn-ghost" style={{ padding: '4px' }}>
+            <X size={24} />
+          </button>
+        </div>
         
-        <h2 style={{ marginBottom: '24px' }}>{isEdit ? 'Edit Product' : 'Add New Product'}</h2>
-        
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-            <div>
-              <label style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Name (English)</label>
-              <input type="text" name="name" value={formData.name} onChange={handleChange} required className="form-input" />
+        {/* Scrollable Form Body */}
+        <div style={{ padding: '24px', overflowY: 'auto', flexGrow: 1, background: 'var(--bg-color)' }}>
+          <form id="product-form" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            
+            {/* Row 1: Names */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="form-group">
+                <label className="form-label">Name (English) *</label>
+                <input type="text" name="name" value={formData.name} onChange={handleChange} required className="form-input" placeholder="e.g. Fresh Red Tomatoes" />
+              </div>
+              <div className="form-group">
+                <label className="form-label">Name (Hindi)</label>
+                <input type="text" name="name_hi" value={formData.name_hi} onChange={handleChange} className="form-input" placeholder="e.g. ताज़ा लाल टमाटर" />
+              </div>
             </div>
-            <div>
-              <label style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Name (Hindi)</label>
-              <input type="text" name="name_hi" value={formData.name_hi} onChange={handleChange} className="form-input" />
+
+            {/* Row 2: Pricing & Category */}
+            <div className="grid grid-cols-3 gap-4">
+              <div className="form-group">
+                <label className="form-label">Price (₹) *</label>
+                <input type="number" name="price" value={formData.price} onChange={handleChange} required className="form-input" placeholder="0" />
+              </div>
+              <div className="form-group">
+                <label className="form-label">Original Price (₹)</label>
+                <input type="number" name="originalPrice" value={formData.originalPrice} onChange={handleChange} className="form-input" placeholder="0" />
+              </div>
+              <div className="form-group">
+                <label className="form-label">Category *</label>
+                <select name="category" value={formData.category} onChange={handleChange} required className="form-input" style={{ cursor: 'pointer' }}>
+                  {CATEGORIES.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-            <div>
-              <label style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Price (₹)</label>
-              <input type="number" name="price" value={formData.price} onChange={handleChange} required className="form-input" />
+            {/* Row 3: Units */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="form-group">
+                <label className="form-label">Unit (English) *</label>
+                <input type="text" name="unit" value={formData.unit} onChange={handleChange} required className="form-input" placeholder="e.g. 1 kg, 500 ml" />
+              </div>
+              <div className="form-group">
+                <label className="form-label">Unit (Hindi)</label>
+                <input type="text" name="unit_hi" value={formData.unit_hi} onChange={handleChange} className="form-input" placeholder="e.g. 1 किलो" />
+              </div>
             </div>
-            <div>
-              <label style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Original Price (₹)</label>
-              <input type="number" name="originalPrice" value={formData.originalPrice} onChange={handleChange} className="form-input" />
+
+            {/* Row 4: Image with Preview */}
+            <div className="form-group">
+              <label className="form-label">Image URL</label>
+              <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                <div style={{ 
+                  width: '80px', height: '80px', 
+                  borderRadius: '12px', 
+                  background: 'var(--input-bg)', 
+                  border: '1.5px dashed var(--border-color)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  overflow: 'hidden', flexShrink: 0
+                }}>
+                  {formData.image ? (
+                    <img src={formData.image} alt="Preview" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  ) : (
+                    <ImageIcon color="var(--text-muted)" size={32} opacity={0.5} />
+                  )}
+                </div>
+                <input type="text" name="image" value={formData.image} onChange={handleChange} className="form-input" placeholder="https://..." style={{ flexGrow: 1, alignSelf: 'center' }} />
+              </div>
             </div>
-          </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-            <div>
-              <label style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Unit (English) e.g. 1 kg</label>
-              <input type="text" name="unit" value={formData.unit} onChange={handleChange} required className="form-input" />
+            {/* Row 5: Descriptions */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="form-group">
+                <label className="form-label">Description (English)</label>
+                <textarea name="description" value={formData.description} onChange={handleChange} className="form-input" rows="3" placeholder="Short product description..."></textarea>
+              </div>
+              <div className="form-group">
+                <label className="form-label">Description (Hindi)</label>
+                <textarea name="description_hi" value={formData.description_hi} onChange={handleChange} className="form-input" rows="3" placeholder="उत्पाद का संक्षिप्त विवरण..."></textarea>
+              </div>
             </div>
-            <div>
-              <label style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Unit (Hindi)</label>
-              <input type="text" name="unit_hi" value={formData.unit_hi} onChange={handleChange} className="form-input" />
-            </div>
-          </div>
 
-          <div>
-            <label style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Category</label>
-            <select name="category" value={formData.category} onChange={handleChange} required className="form-input" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
-              {CATEGORIES.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
-            </select>
-          </div>
+            {/* Stock Toggle */}
+            <label style={{ 
+              display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', 
+              background: formData.inStock ? 'var(--primary-light)' : 'var(--input-bg)',
+              padding: '16px', borderRadius: '12px', border: `1.5px solid ${formData.inStock ? 'var(--primary)' : 'var(--border-color)'}`,
+              transition: 'all 0.2s'
+            }}>
+              <input type="checkbox" name="inStock" checked={formData.inStock} onChange={handleChange} style={{ width: '20px', height: '20px', accentColor: 'var(--primary)' }} />
+              <div>
+                <div style={{ fontWeight: '800', color: formData.inStock ? 'var(--primary)' : 'var(--text-main)', fontSize: '15px' }}>
+                  {formData.inStock ? 'Currently In Stock' : 'Out of Stock'}
+                </div>
+                <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
+                  Toggle to hide or show this product to customers.
+                </div>
+              </div>
+            </label>
 
-          <div>
-            <label style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Image URL</label>
-            <input type="text" name="image" value={formData.image} onChange={handleChange} className="form-input" />
-          </div>
+          </form>
+        </div>
 
-          <div>
-            <label style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Description (English)</label>
-            <textarea name="description" value={formData.description} onChange={handleChange} className="form-input" rows="3"></textarea>
-          </div>
-          <div>
-            <label style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Description (Hindi)</label>
-            <textarea name="description_hi" value={formData.description_hi} onChange={handleChange} className="form-input" rows="3"></textarea>
-          </div>
-
-          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
-            <input type="checkbox" name="inStock" checked={formData.inStock} onChange={handleChange} style={{ width: '20px', height: '20px' }} />
-            <span style={{ fontWeight: '500' }}>Product is In Stock</span>
-          </label>
-
-          <div style={{ display: 'flex', gap: '12px', marginTop: '16px' }}>
-            <button type="submit" className="btn btn-primary" style={{ flex: 1, padding: '12px' }}>
-              {isEdit ? 'Save Changes' : 'Create Product'}
+        {/* Footer Actions */}
+        <div style={{ padding: '20px 24px', borderTop: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', background: 'var(--card-bg)' }}>
+          {isEdit ? (
+            <button type="button" onClick={handleDelete} className="btn" style={{ background: '#fef2f2', color: '#dc2626', border: '1.5px solid #fca5a5' }}>
+              <Trash2 size={18} /> Delete Product
             </button>
-            {isEdit && (
-              <button type="button" onClick={handleDelete} className="btn btn-outline" style={{ color: 'var(--error)', borderColor: 'var(--error)' }}>
-                Delete
-              </button>
-            )}
+          ) : <div></div>}
+          
+          <div style={{ display: 'flex', gap: '12px' }}>
+            <button type="button" onClick={onClose} className="btn btn-outline">Cancel</button>
+            <button type="submit" form="product-form" className="btn btn-primary" style={{ paddingLeft: '24px', paddingRight: '24px' }}>
+              <Save size={18} /> {isEdit ? 'Save Changes' : 'Create Product'}
+            </button>
           </div>
-        </form>
+        </div>
+
       </div>
     </div>
   );

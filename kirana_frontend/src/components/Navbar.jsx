@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, ShoppingCart, User, Globe, ShoppingBag, Moon, Sun, MapPin } from 'lucide-react';
+import { Search, ShoppingCart, User, Globe, ShoppingBag, Moon, Sun } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import LocationSelector from './LocationSelector';
 
 const Navbar = ({ onOpenAuth, onSearch }) => {
   const { totalItems, total, openCart } = useCart();
@@ -40,10 +41,8 @@ const Navbar = ({ onOpenAuth, onSearch }) => {
         </Link>
 
         {/* Location Selector */}
-        <div className="nav-location hide-mobile">
-          <MapPin size={14} color="var(--primary)" />
-          <span>Deliver to</span>
-          <strong>110001 ▾</strong>
+        <div className="hide-mobile">
+          <LocationSelector />
         </div>
 
         {/* Search Bar */}

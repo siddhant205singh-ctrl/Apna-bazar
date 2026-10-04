@@ -1014,11 +1014,30 @@ input, textarea, select { font-family: inherit; }
   .hide-mobile { display: none !important; }
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .hero-emoji { display: none; }
-  .hero-content { padding: 28px 24px; }
-  .owner-sidebar { display: none; }
-  .owner-main { padding: 20px 16px; }
-  .drawer { width: 100%; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .owner-layout { flex-direction: column; }
+  .owner-sidebar { 
+    display: flex !important; 
+    width: 100%; 
+    height: auto; 
+    position: static; 
+    flex-direction: column; 
+    padding: 16px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .owner-sidebar .sidebar-logo {
+    padding: 0 0 16px 0;
+  }
+  .owner-sidebar .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .owner-sidebar .sidebar-link {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
 }
 
 /* ============================================
